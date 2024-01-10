@@ -99,7 +99,7 @@ de01_non_num <- raw %>%
 # location)
 
 de01_testcases <- de01_non_num[
-  !(endsWith(de01_non_num, "CC") | endsWith(de01_non_num, "cc"))] |>
+  !(endsWith(de01_non_num, "CC") | endsWith(de01_non_num, "cc"))] %>% 
   unique()
 
 # Third: Remove the test cases, also remove a test case that was not covered
@@ -177,7 +177,7 @@ raw$id_subject[raw$lab == "DE_01" & raw$sub %in% cc_suffix$sub] <-
     `+`(500)
 
 # Clean up...
-rm(cc_suffix, de01_non_num, de01_testcases)
+rm(cc_suffix, de01_non_num, de01_testcases, first_five)
   
 # Duplicated participant IDs ---------------------------------------------------
 
